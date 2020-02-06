@@ -272,7 +272,14 @@ export const languagesArr: IFeatureDefinition[] = [
   },
   {
     label: 'yaml',
-    entry: 'vs/basic-languages/yaml/yaml.contribution'
+    entry: [
+      'vs/basic-languages/yaml/yaml.contribution',
+      'vs/language/yaml/monaco.contribution'
+    ],
+    worker: {
+      id: 'vs/language/yaml/yamlWorker',
+      entry: 'vs/language/yaml/yaml.worker'
+    }
   }
 ];
 
